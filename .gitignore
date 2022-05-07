@@ -1,6 +1,6 @@
 # Local .terraform directories
 **/.terraform/*
-
+kubectl
 # .tfstate files
 *.tfstate
 *.tfstate.*
