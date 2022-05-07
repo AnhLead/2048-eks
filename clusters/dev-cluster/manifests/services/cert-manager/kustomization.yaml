@@ -4,4 +4,3 @@ namespace: ingress-nginx
 resources:
   - cert-manager-issuers.yaml
   - cert-manager.yaml
-  - repository.yaml
