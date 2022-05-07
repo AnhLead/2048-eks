@@ -35,6 +35,24 @@ module "eks" {
 module "load_balancer_controller_irsa_role" {
   source       = "../modules/iam"
   depends_on   = [module.eks]
+  external_dns_hosted_zone_arns = var.external_dns_hosted_zone_arns
   provider_arn = module.eks.oidc_provider_arn
   tags         = var.tags
+}
+
+module "zones" {
+  source  = "../modules/route53"
+
+  zones = var.zones
+  tags = var.tags
+}
+
+module "external_dns_irsa_role" {
+  source = "../modules/iam"
+  depends_on   = [module.eks]
+
+  external_dns_hosted_zone_arns = var.external_dns_hosted_zone_arns
+  provider_arn               = module.eks.oidc_provider_arn
+
+  tags = var.tags
 }

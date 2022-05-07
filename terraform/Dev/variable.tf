@@ -81,3 +81,29 @@ variable "cluster_endpoint_private_access" {
   type    = bool
   default = true
 }
+
+################################################################################
+# IAM
+################################################################################
+
+variable "external_dns_hosted_zone_arns" {
+  type = any
+  default = ["arn:aws:route53:::hostedzone/Z04675311B9MSN9WWQXPO"]
+}
+
+################################################################################
+# ROUTE53
+################################################################################
+
+variable "zones" {
+  type    = any
+  default = {
+    "anhtran.be" = {
+      comment = "Hosted by Terraform"
+      tags =  {
+        terraform   = "true"
+      }
+    }
+  }
+  
+}
