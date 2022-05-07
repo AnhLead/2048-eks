@@ -1,0 +1,27 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+bases:
+  - ../2048app-cert
+
+namespace: 2048app
+
+commonLabels:
+  app: 2048app
+  demo: kustomize-cert-manager
+
+# Create secrets/tls.crt and secrets/tls.key files to use as a CA
+secretGenerator:
+  - name: 2048app-ca
+    files:
+      - secrets/serverca.crt
+      - secrets/server.key
+    type: "kubernetes.io/tls"
+
+generatorOptions:
+  disableNameSuffixHash: true
+  labels:
+    kustomize.generated.resource: somevalue
+
+resources:
+  - issuer.yaml

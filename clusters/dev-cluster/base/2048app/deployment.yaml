@@ -1,0 +1,18 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: 2048app-deployment
+spec:
+  selector:
+    matchLabels:
+      app: 2048app
+  template:
+    metadata:
+      labels:
+        app: 2048app
+    spec:
+      containers:
+      - name: 2048app
+        image: gcr.io/google-samples/hello-app:1.0
+        ports:
+        - containerPort: 8080
