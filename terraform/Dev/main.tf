@@ -31,3 +31,10 @@ module "eks" {
   subnet_ids                      = module.vpc.private_subnets
   service_account_role_arn        = module.eks.oidc_provider_arn
 }
+
+module "load_balancer_controller_irsa_role" {
+  source       = "../modules/iam"
+  depends_on   = [module.eks]
+  provider_arn = module.eks.oidc_provider_arn
+  tags         = var.tags
+}
