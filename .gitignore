@@ -1,6 +1,8 @@
 # Local .terraform directories
 **/.terraform/*
 kubectl
+rbac
+
 # .tfstate files
 *.tfstate
 *.tfstate.*

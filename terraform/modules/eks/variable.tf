@@ -56,5 +56,5 @@ variable "cluster_endpoint_private_access" {
 
 variable "manage_aws_auth_configmap" {
   type    = bool
-  default = true
+  default = false
 }

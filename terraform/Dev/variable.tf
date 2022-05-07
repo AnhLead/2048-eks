@@ -43,7 +43,7 @@ variable "public_subnets" {
 variable "cluster_name" {
   type        = string
   description = "Cluster name"
-  default     = "staging-cluster"
+  default     = "worker-1"
 }
 
 variable "cluster_version" {
@@ -64,7 +64,7 @@ variable "environment" {
 
 variable "instance_types" {
   type    = list(string)
-  default = ["t2.small"]
+  default = ["t2.medium"]
 }
 
 variable "cluster_ip_family" {
