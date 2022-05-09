@@ -4,3 +4,4 @@ namespace: flux-system
 resources:
   - bitnami.yaml
   - jetstack.yaml
+  - kubernetes-sigs.yaml
