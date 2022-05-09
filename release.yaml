@@ -15,9 +15,4 @@ spec:
       version: 4.1.0
   interval: 1m0s
   releaseName: ingress-nginx
-  values:
-    service:
-      type: LoadBalancer
-    containerPort:
-      http: 80
-      https: 443
+
