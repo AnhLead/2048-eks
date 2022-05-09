@@ -9,7 +9,7 @@ spec:
       chart: ingress-nginx
       sourceRef:
         kind: HelmRepository
-        name: kubernetes
+        name: ingress-nginx
         namespace: flux-system
       version: "4.1.0"
   interval: 1h0m0s
