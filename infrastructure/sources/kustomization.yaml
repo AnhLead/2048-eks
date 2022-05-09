@@ -5,5 +5,6 @@ namespace: flux-system
 resources:
   - bitnami.yaml
   - jetstack.yaml
-  - kubernetes-sigs.yaml
+  - external-dns.yaml
   - ingress-nginx.yaml
+  - autoscaler.yaml

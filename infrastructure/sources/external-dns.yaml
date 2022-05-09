@@ -2,7 +2,7 @@
 apiVersion: source.toolkit.fluxcd.io/v1beta2
 kind: HelmRepository
 metadata:
-  name: kubernetes-sigs
+  name: external-dns
 spec:
   interval: 1m
-  url: https://kubernetes-sigs.github.io
+  url: https://kubernetes-sigs.github.io/external-dns/
