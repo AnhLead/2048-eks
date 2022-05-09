@@ -1,0 +1,21 @@
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: cluster-autoscaler
+  namespace: cluster-autoscaler
+spec:
+  chart:
+    spec:
+      chart: cluster-autoscaler
+      reconcileStrategy: ChartVersion
+      sourceRef:
+        kind: HelmRepository
+        name: kubernetes
+        namespace: flux-system
+      version: 1.9.0
+  interval: 1m0s
+  releaseName: cluster-autoscaler
+  values:
+    replicaCount: 1
+    autoDiscovery.clusterName: dev-cluster

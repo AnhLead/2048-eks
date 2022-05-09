@@ -5,3 +5,4 @@ resources:
   - bitnami.yaml
   - jetstack.yaml
   - kubernetes-sigs.yaml
+  - kubernetes.yaml
