@@ -4,4 +4,4 @@ metadata:
   name: kubernetes-sigs
 spec:
   interval: 1m
-  url: https://kubernetes-sigs.github.io/
+  url: https://kubernetes-sigs.github.io
