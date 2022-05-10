@@ -4,5 +4,3 @@ kind: Kustomization
 resources:
   - external-dns
   - nginx
-  - cert-manager
-  - cluster-autoscaler
