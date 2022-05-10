@@ -15,7 +15,7 @@ spec:
         app: 2048-app
     spec:
       containers:
-      -name: 2048-app
-        image: docker.io/evilroot/docker-2048:latest
+      - name: 2048-app
+        image: {{ default "docker.io/evilroot/docker-2048:latest" .Values.image }}
         ports:
         - containerPort: 8080
