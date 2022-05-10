@@ -4,3 +4,4 @@ namespace: cluster-autoscaler
 resources:
   - namespace.yaml
   - release.yaml
+  - repository.yaml

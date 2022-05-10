@@ -4,6 +4,3 @@ kind: Kustomization
 namespace: flux-system
 resources:
   - jetstack.yaml
-  - external-dns.yaml
-  - ingress-nginx.yaml
-  - autoscaler.yaml
