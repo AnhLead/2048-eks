@@ -3,5 +3,6 @@ kind: Kustomization
 namespace: app-2048
 resources:
   - namespace.yaml
-  - release.yaml
   - repository.yaml
+  - helmchart.yaml
+  - release.yaml
