@@ -1,18 +1,14 @@
 ---
 apiVersion: helm.toolkit.fluxcd.io/v2beta1
-kind: HelmRelease
+kind: HelmChart
 metadata:
   name: app-2048
   namespace: app-2048
 spec:
-  chart:
-    spec:
-      chart: ./charts/2048-app
-      sourceRef:
-        kind: GitRepository
-        name: app-2048
-        namespace: flux-system
-      version: 0.0.1
+  chart: ./charts/2048-app
+  sourceRef:
+    kind: GitRepository
+    name: app-2048
+    namespace: flux-system
   interval: 1m0s
-  releaseName: app-2048
-  targetNamespace: app-2048
+  reconcileStrategy: Revision
