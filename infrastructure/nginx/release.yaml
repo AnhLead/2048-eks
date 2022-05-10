@@ -19,11 +19,15 @@ spec:
   values:
     controller:
       service:
+        labels:
+          dns: "route53"
         annotations:
           service.beta.kubernetes.io/aws-load-balancer-internal: "true"
           service.beta.kubernetes.io/aws-load-balancer-backend-protocol: tcp
           service.beta.kubernetes.io/aws-load-balancer-cross-zone-load-balancing-enabled: true
           service.beta.kubernetes.io/aws-load-balancer-type: nlb
           external-dns.alpha.kubernetes.io/hostname: anhtran.be
+          kubernetes.io/cluster/dev-cluster: owned
+          domainName: "anhtran.be"
 
       
