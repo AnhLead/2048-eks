@@ -5,5 +5,4 @@ resources:
   - sources
   - cert-manager
   - nginx
-  - external-dns
   - cluster-autoscaler
