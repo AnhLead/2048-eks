@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: 2048-app-service
+  namespace: 2048-app
+spec:
+  selector:
+    app: 2048-app
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 8080
+  type: LoadBalancer
