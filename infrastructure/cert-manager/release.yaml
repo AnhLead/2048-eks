@@ -21,7 +21,7 @@ spec:
       rbac:
         create: true
         aggregateClusterRoles: true
-    installCRDs: true
+    installCRDs: false
     replicaCount: 1
     serviceAccount:
       create: true
