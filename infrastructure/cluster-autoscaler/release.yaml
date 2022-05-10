@@ -18,8 +18,12 @@ spec:
   values:
     autoDiscovery:
       clusterName: dev-cluster
-    cloudProvider: aws
+      cloudProvider: aws
     awsRegion: eu-west-2
+    autoscalingGroups:
+      - name: asg-1
+        maxSize: 3
+        minSize: 1 
     rbac:
       create: true
       serviceAccount:
