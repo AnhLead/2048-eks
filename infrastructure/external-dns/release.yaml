@@ -18,11 +18,13 @@ spec:
   values:
     serviceAccount:
       create: true
-      annotations: {}
+      annotations: {
+        arn:aws:iam::063825035012:policy/AmazonEKS_External_DNS_Policy-20220510110710230900000001
+      }
     rbac:
       create: true
     service:
-      port: 7978
+      port: 7978yes
     sources:
       - service
       - ingress

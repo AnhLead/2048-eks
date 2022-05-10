@@ -8,7 +8,7 @@ module "load_balancer_controller_irsa_role" {
   oidc_providers = {
     ex = {
       provider_arn               = var.provider_arn
-      namespace_service_accounts = ["kube-system:aws-load-balancer-controller"]
+      namespace_service_accounts = ["flux-system:aws-load-balancer-controller"]
     }
   }
 
@@ -25,7 +25,7 @@ module "external_dns_irsa_role" {
   oidc_providers = {
     ex = {
       provider_arn               = var.provider_arn
-      namespace_service_accounts = ["kube-system:external-dns"]
+      namespace_service_accounts = ["flux-system:external-dns"]
     }
   }
 
