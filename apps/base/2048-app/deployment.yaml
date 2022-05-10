@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: app-2048
+  labels:
+    app: app-2048
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: app-2048
+  template:
+    metadata:
+      labels:
+        app: app-2048
+    spec:
+      containers:
+      - image: docker.io/evilroot/docker-2048:latest
+        name: app-2048
+        ports:
+        - name: http
+          containerPort: 80
+        livenessProbe:
+          httpGet:
+            path: /
+            port: http
+            

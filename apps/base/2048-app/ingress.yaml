@@ -3,9 +3,12 @@ kind: Ingress
 metadata:
   name: app-2048-ingress
   namespace: app-2048
+  annotations:
+    kubernetes.io/tls-acme: "true"
+    certmanager.k8s.io/cluster-issuer: selfsigned-issuer
 spec:
   rules:
-  - host: wide-load-balancer-a90664b19744a850.elb.eu-west-2.amazonaws.com
+  - host: anhtran.be
     http:
       paths:
       - path: /
@@ -13,5 +16,5 @@ spec:
         backend:
           service:
             name: app-2048-service
-            port: 
-              number: 80
+            port:
+              name: http
