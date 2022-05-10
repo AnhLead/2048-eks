@@ -21,3 +21,5 @@ spec:
     installCRDs: true
     prometheus:
       enabled: false
+    webhook:
+      timeoutSeconds: 30
