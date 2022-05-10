@@ -9,7 +9,4 @@ spec:
   url: 'https://github.com/AnhLead/2048-app'
   ref:
     branch: main
-  ignore: |
-    /*
-    !/charts/
 

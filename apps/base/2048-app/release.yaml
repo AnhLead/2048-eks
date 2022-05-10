@@ -16,3 +16,4 @@ spec:
       version: 0.0.1
   interval: 1m0s
   releaseName: app-2048
+  targetNamespace: app-2048
