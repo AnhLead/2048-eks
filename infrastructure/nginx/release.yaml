@@ -22,4 +22,4 @@ spec:
       http: 80
       https: 443
     controller:
-      hostname: wide-load-balancer-a90664b19744a850.elb.eu-west-2.amazonaws.com
+      hostNetwork: true
