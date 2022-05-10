@@ -17,4 +17,5 @@ spec:
   releaseName: cluster-autoscaler
   values:
     replicaCount: 1
-    autoDiscovery.clusterName: dev-cluster
+    autoDiscovery:
+      clusterName: dev-cluster
