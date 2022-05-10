@@ -18,12 +18,12 @@ spec:
   values:
     serviceAccount:
       create: true
-      annotations: {
-        arn:aws:iam::063825035012:policy/AmazonEKS_External_DNS_Policy-20220510110710230900000001
-        }
       name: "External-DNS"
     rbac:
       create: true
+      attionalPermissions: {
+        arn:aws:iam::063825035012:policy/AmazonEKS_External_DNS_Policy-20220510110710230900000001
+      }
     service:
       port: 7979
     sources:
