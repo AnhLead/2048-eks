@@ -18,7 +18,7 @@ spec:
   values:
     serviceAccount:
       create: true
-      annotations:
+      annotations: {}
     rbac:
       create: true
     service:
