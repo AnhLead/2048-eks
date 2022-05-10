@@ -59,6 +59,8 @@ module "eks" {
   
   eks_managed_node_groups = {
     blue = {}
+    red = {}
+    yellow = {}
     green = {
       min_size     = 1
       max_size     = 3
@@ -82,12 +84,9 @@ module "eks" {
         max_unavailable_percentage = var.max_unavailable_percentage
       }
 
-      tags = var.tags
+      
     }
   }
-  
-
-  tags = var.tags
 }
 
 resource "aws_security_group" "additional" {
@@ -105,5 +104,5 @@ resource "aws_security_group" "additional" {
     ]
   }
 
-  tags = var.tags
+  
 }
