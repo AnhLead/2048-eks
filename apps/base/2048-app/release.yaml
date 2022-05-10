@@ -8,7 +8,6 @@ spec:
   chart:
     spec:
       chart: ./charts/2048-app
-      reconcileStrategy: ChartVersion
       sourceRef:
         kind: GitRepository
         name: app-2048
