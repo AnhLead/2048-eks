@@ -26,3 +26,4 @@ spec:
       - service
       - ingress
     provider: aws
+    txtOwnerId: "external-dns"
