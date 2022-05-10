@@ -7,11 +7,11 @@ metadata:
 spec:
   chart:
     spec:
-      chart: autoscaler
+      chart: cluster-autoscaler
       reconcileStrategy: ChartVersion
       sourceRef:
         kind: HelmRepository
-        name: autoscaler
+        name: cluster-autoscaler
       version: 9.18.0
   interval: 1m0s
   releaseName: cluster-autoscaler
