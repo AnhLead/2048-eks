@@ -2,7 +2,7 @@
 apiVersion: source.toolkit.fluxcd.io/v1beta2
 kind: HelmRepository
 metadata:
-  name: cluster-autoscaler
+  name: autoscaler
   namespace: cluster-autoscaler
 spec:
   interval: 1m
