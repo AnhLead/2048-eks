@@ -22,7 +22,7 @@ spec:
     rbac:
       create: true
     service:
-      port: 7979
+      port: 7978
     sources:
       - service
       - ingress
