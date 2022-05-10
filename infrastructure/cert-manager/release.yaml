@@ -23,4 +23,5 @@ spec:
       enabled: false
     webhook:
       timeoutSeconds: 30
+      securePort: 10251
       hostNetwork: true
