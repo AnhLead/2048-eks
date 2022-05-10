@@ -16,6 +16,13 @@ spec:
   interval: 1m0s
   releaseName: cluster-autoscaler
   values:
-    replicaCount: 1
     autoDiscovery:
       clusterName: dev-cluster
+    cloudProvider: aws
+    awsRegion: eu-west-2
+    rbac:
+      create: true
+      serviceAccount:
+        create: true
+        serviceAccount.automountServiceAccountToken: true
+    replicaCount: 1
