@@ -24,5 +24,5 @@ spec:
       port: 7979
     sources:
       - service
-      - ingress-nginx
+      - ingress
     provider: aws
