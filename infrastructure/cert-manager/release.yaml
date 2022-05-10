@@ -22,7 +22,7 @@ spec:
         create: true
         aggregateClusterRoles: true
       leaderElection:
-        namespace: "flux-system"
+        namespace: flux-system
     installCRDs: true
     replicaCount: 1
     serviceAccount:
