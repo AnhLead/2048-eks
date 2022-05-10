@@ -6,4 +6,4 @@ metadata:
   namespace: cluster-autoscaler
 spec:
   interval: 1m
-  url: https://kubernetes.github.io
+  url: https://kubernetes.github.io/autoscaler
