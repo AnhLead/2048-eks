@@ -16,6 +16,7 @@ spec:
       version: 1.8.0
   interval: 1m0s
   releaseName: cert-manager
+  targetNamespace: cert-manager
   values:
     global:
       rbac:
