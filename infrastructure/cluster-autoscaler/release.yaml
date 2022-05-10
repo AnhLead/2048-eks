@@ -17,7 +17,7 @@ spec:
   releaseName: cluster-autoscaler
   values:
     autoDiscovery:
-      clusterName: dev-cluster
+      clusterName: cluster.local
       cloudProvider: aws
     awsRegion: eu-west-2
     autoscalingGroups:
