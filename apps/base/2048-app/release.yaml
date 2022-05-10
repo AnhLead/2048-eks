@@ -9,6 +9,5 @@ spec:
   sourceRef:
     kind: GitRepository
     name: app-2048
-    namespace: flux-system
   interval: 1m0s
   reconcileStrategy: Revision
