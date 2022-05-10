@@ -17,7 +17,7 @@ spec:
   releaseName: ingress-nginx
   values:
     service:
-      type: LoadBalancer
+      type: NodePort
     containerPort:
       http: 80
       https: 443
