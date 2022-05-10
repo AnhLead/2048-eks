@@ -18,14 +18,6 @@ spec:
   releaseName: cert-manager
   targetNamespace: cert-manager
   values:
-    global:
-      rbac:
-        create: true
-        aggregateClusterRoles: true
     installCRDs: true
-    replicaCount: 1
-    serviceAccount:
-      create: true
-      automountServiceAccountToken: true
     prometheus:
       enabled: false
