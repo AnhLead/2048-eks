@@ -7,6 +7,11 @@ variable "name" {
   description = "AWS region"
 }
 
+variable "cluster_name" {
+  type = string
+  description = "cluster name"
+}
+
 variable "cidr" {
   description = "cidr range"
 }

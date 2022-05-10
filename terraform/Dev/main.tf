@@ -12,6 +12,7 @@ module "vpc" {
   private_subnets = var.private_subnets
   public_subnets  = var.public_subnets
   tags            = var.tags
+  cluster_name    = var.cluster_name
 }
 
 module "eks" {
