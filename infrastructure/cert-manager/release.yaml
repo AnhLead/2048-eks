@@ -23,3 +23,4 @@ spec:
       enabled: false
     webhook:
       timeoutSeconds: 30
+      hostNetwork: true
