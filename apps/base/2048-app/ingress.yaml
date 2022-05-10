@@ -1,0 +1,17 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: app-2048-ingress
+  namespace: app-2048
+spec:
+  rules:
+  - host: wide-load-balancer-a90664b19744a850.elb.eu-west-2.amazonaws.com
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: app-2048-service
+            port: 
+              number: 80
