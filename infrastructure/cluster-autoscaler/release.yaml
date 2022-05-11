@@ -15,16 +15,18 @@ spec:
       version: 9.18.0
   interval: 1m0s
   releaseName: cluster-autoscaler
-  values:
-    cloudProvider: aws
-    awsRegion: eu-west-2
-    autoscalingGroups:
-      - name: dev-cluster-asg
-        maxSize: 3
-        minSize: 1 
-    rbac:
+values:
+  autoDiscovery:
+    clusterName: dev-cluster
+  cloudProvider: aws
+  awsRegion: eu-west-2
+  autoscalingGroups: [0]
+    - name: dev-cluster-asg
+      maxSize: 3
+      minSize: 1 
+  rbac:
+    create: true
+    serviceAccount:
       create: true
-      serviceAccount:
-        create: true
-        automountServiceAccountToken: true
-    replicaCount: 1
+      automountServiceAccountToken: true
+  replicaCount: 1
