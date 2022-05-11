@@ -12,9 +12,9 @@ spec:
   ingressClassName: nginx
   defaultBackend:
     service:
-      name: app-2048-service
+      name: app-2048-service-backend
       port:
-        number: 80
+        number: 8080
   rules:
     - host: app.anhtran.be
       http:
