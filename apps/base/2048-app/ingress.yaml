@@ -12,7 +12,7 @@ spec:
   - host: app.anh.tran.be
     http:
       paths:
-      - path: /
+      - path: /usr/share/nginx/html
         pathType: Prefix
         backend: 
           service:
