@@ -28,6 +28,7 @@ spec:
         podMonitorSelector:
           matchLabels:
             app.kubernetes.io/part-of: flux
+  grafana:  
     ingress:
       enabled: true
       ingressClassName: nginx
@@ -36,11 +37,10 @@ spec:
         cert-manager.io/cluster-issuer: letsencrypt
         cert-manager.io/duration: 2160h # 90d
         cert-manager.io/renew-before: 360h # 15d
-        external-dns.alpha.kubernetes.io/hostname: monitoring.anhtran.be
+        external-dns.alpha.kubernetes.io/hostname: grafana.anhtran.be
       tls:
-      - secretName: prometheus-server-tls
+      - secretName: grafana-general-tls
         hosts:
-        - app.anhtran.be
-      hosts: app.anhtran.be
+        - grafana.anhtran.be
+      hosts: grafana.anhtran.be
       path: /
-      pathType: Prefix

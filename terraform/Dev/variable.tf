@@ -64,7 +64,7 @@ variable "environment" {
 
 variable "instance_types" {
   type    = list(string)
-  default = ["t2.large"]
+  default = ["t3.large", "t3.medium", "t3.small", "t3.micro"]
 }
 
 variable "cluster_ip_family" {
