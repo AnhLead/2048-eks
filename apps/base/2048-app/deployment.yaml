@@ -19,5 +19,9 @@ spec:
       - image: docker.io/alexwhen/docker-2048:latest
         name: app-2048
         ports:
-        - containerPort: 80
-            
+        - name: http
+          containerPort: 80
+          protocol: TCP
+        selector:
+          app.kubernetes.io/instance: app-2048
+          app.kubernetes.io/name: app-2048    
