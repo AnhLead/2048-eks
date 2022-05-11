@@ -14,7 +14,8 @@ spec:
     - host: app.anhtran.be
       http:
         paths:
-          - path: /abc/(.*)
+          - path: /app/(.*)
+            pathType: Prefix
             backend:
               serviceName: app-2048-service
               servicePort: 80
