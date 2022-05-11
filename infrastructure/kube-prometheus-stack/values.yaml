@@ -104,7 +104,7 @@ global:
 
     ## Create ClusterRoles that extend the existing view, edit and admin ClusterRoles to interact with prometheus-operator CRDs
     ## Ref: https://kubernetes.io/docs/reference/access-authn-authz/rbac/#aggregated-clusterroles
-    createAggregateClusterRoles: false
+    createAggregateClusterRoles: true
     pspEnabled: false
     pspAnnotations: {}
       ## Specify pod annotations
@@ -692,7 +692,7 @@ grafana:
       cert-manager.io/duration: 2160h # 90d
       cert-manager.io/renew-before: 360h # 15d
       external-dns.alpha.kubernetes.io/hostname: grafana.anhtran.be
-      # kubernetes.io/ingress.class: nginx
+      kubernetes.io/ingress.class: nginx
       # kubernetes.io/tls-acme: "true"
 
     ## Labels to be added to the Ingress
@@ -1662,7 +1662,7 @@ prometheusOperator:
   # Required for use in managed kubernetes clusters (such as AWS EKS) with custom CNI (such as calico),
   # because control-plane managed by AWS cannot communicate with pods' IP CIDR and admission webhooks are not working
   ##
-  hostNetwork: false
+  hostNetwork: true
 
   ## Define which Nodes the Pods are scheduled on.
   ## ref: https://kubernetes.io/docs/user-guide/node-selection/
@@ -2326,7 +2326,7 @@ prometheus:
     ## PodMonitors to be selected for target discovery.
     ## If {}, select all PodMonitors
     ##
-    podMonitorSelector: {}
+    podMonitorSelector:
     ## Example which selects PodMonitors with label "prometheus" set to "somelabel"
     # podMonitorSelector:
       matchLabels:
