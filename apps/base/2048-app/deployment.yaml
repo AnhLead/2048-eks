@@ -25,7 +25,10 @@ spec:
         - name: http
           containerPort: 80
         volumeMounts:
-        - name: app-2048
+        - name: image-store
           mountPath: "/var/lib/nginx/html"
+    volumes:
+      - name: image-store
+        emptyDir: {}
 
             
