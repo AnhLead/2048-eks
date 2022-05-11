@@ -20,13 +20,13 @@ spec:
       clusterName: dev-cluster
     cloudProvider: aws
     awsRegion: eu-west-2
-    autoscalingGroups:
-      - name: asg-1
+    autoscalingGroups: [0]
+      - name: dev-cluster-asg
         maxSize: 3
         minSize: 1 
     rbac:
       create: true
       serviceAccount:
         create: true
-        serviceAccount.automountServiceAccountToken: true
+        automountServiceAccountToken: true
     replicaCount: 1
