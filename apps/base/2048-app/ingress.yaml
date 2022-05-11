@@ -2,9 +2,8 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   annotations:
-    nginx.ingress.kubernetes.io/proxy-body-size: "0"
-    nginx.ingress.kubernetes.io/proxy-read-timeout: "600"
-    nginx.ingress.kubernetes.io/proxy-send-timeout: "600"
+    kubernetes.io/ingress.class: ingress-nginx
+    nginx.ingress.kubernetes.io/scheme: internet-facing
     certmanager.k8s.io/cluster-issuer: "selfsigned-cluster-issuer"
     external-dns.alpha.kubernetes.io/hostname: 2048.anhtran.be
   name: app-2048
@@ -14,8 +13,7 @@ spec:
     - host: app-2048-service 
       http:
         paths:
-        - path: /var/lib/nginx/html
-          pathType: Prefix
+        - path: /
           backend:
             service:
               name: app-2048-service

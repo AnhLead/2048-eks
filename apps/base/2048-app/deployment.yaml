@@ -15,9 +15,9 @@ spec:
     spec:
       containers:
       - image: docker.io/evilroot/docker-2048:latest
+        imagePullPolicy: IfNotPresent
         name: app-2048
         ports:
-        - name: http
-          containerPort: 80
+        - containerPort: 80
 
             
