@@ -18,5 +18,5 @@ spec:
           service:
             name: app-2048
             port:
-              number: hhtp
+              number: http
 
