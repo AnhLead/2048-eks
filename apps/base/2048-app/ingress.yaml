@@ -6,10 +6,10 @@ metadata:
   annotations:
     kubernetes.io/tls-acme: "true"
     certmanager.k8s.io/cluster-issuer: selfsigned-cluster-issuer
-     kubernetes.io/ingress.class: ingress-nginx
+    kubernetes.io/ingress.class: ingress-nginx
 spec:
   rules:
-  - host: anhtran.be
+  - host: 2048.anhtran.be
     http:
       paths:
       - path: /usr/share/nginx/html
