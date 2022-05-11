@@ -5,6 +5,7 @@ metadata:
     kubernetes.io/ingress.class: nginx
     certmanager.k8s.io/cluster-issuer: selfsigned-cluster-issuer
     external-dns.alpha.kubernetes.io/hostname: app.anhtran.be
+    nginx.ingress.kubernetes.io/rewrite-target: /usr/share/nginx/html/
   name: app-2048
   namespace: app-2048
 spec:
@@ -14,9 +15,15 @@ spec:
       paths:
       - path: /usr/share/nginx/html
         pathType: Prefix
+        backend: 
+          service:
+            name: app-2048
+            port:
+              number: 80
+      - path: /(.*)
+        pathType: Prefix
         backend:
           service:
             name: app-2048
             port:
               number: 80
-                
