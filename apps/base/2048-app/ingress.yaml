@@ -16,4 +16,4 @@ spec:
             pathType: Prefix
             backend:
               serviceName: app-2048-service
-              servicePort: 8080
+              servicePort: 8181
