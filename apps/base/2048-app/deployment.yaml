@@ -15,6 +15,9 @@ spec:
         app: app-2048
     spec:
       containers:
+      - command:
+        - app-2048
+        - --rootpath=/usr/share/nginx/html
       - args:
         - /nginx-ingress-controller
         - --publish-service=ingress-nginx/ingress-nginx-controller
