@@ -5,15 +5,16 @@ metadata:
   name: app-2048-ingress
   annotations:
     nginx.ingress.kubernetes.io/ssl-redirect: 'true'
+    nginx.ingress.kubernetes.io/rewrite-target: /$1
     cert-manager.io/cluster-issuer: selfsigned-cluster-issuer
     external-dns.alpha.kubernetes.io/hostname: app.anhtran.be
 spec:
-  ingressClassName: ingress-nginx
+  ingressClassName: nginx
   rules:
     - host: app.anhtran.be
       http:
         paths:
-          - path: /app/2048/service
+          - path: /abc/(.*)
             backend:
               serviceName: app-2048-service
               servicePort: 80
