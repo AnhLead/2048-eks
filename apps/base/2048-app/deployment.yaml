@@ -19,6 +19,4 @@ spec:
         name: app-2048
         ports:
         - containerPort: 80
-        command:
-          - --rootpath=/usr/share/nginx/html
             
