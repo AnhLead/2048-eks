@@ -64,7 +64,7 @@ variable "environment" {
 
 variable "instance_types" {
   type    = list(string)
-  default = ["t2.micro"]
+  default = ["t2.medium"]
 }
 
 variable "cluster_ip_family" {
@@ -80,15 +80,6 @@ variable "cluster_endpoint_public_access" {
 variable "cluster_endpoint_private_access" {
   type    = bool
   default = true
-}
-
-################################################################################
-# IAM
-################################################################################
-
-variable "external_dns_hosted_zone_arns" {
-  type = any
-  default = ["arn:aws:route53:::hostedzone/Z04675311B9MSN9WWQXPO"]
 }
 
 ################################################################################
