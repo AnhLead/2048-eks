@@ -17,7 +17,7 @@ spec:
       containers:
       - image: docker.io/evilroot/docker-2048:latest
         args:
-        - /var/lib/nginx/html 
+        - cd /var/lib/nginx/html 
         name: app-2048
         ports:
         - containerPort: 80
