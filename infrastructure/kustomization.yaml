@@ -6,5 +6,5 @@ resources:
   - nginx
   - cert-manager
   - metrics-server
-  #- kube-prometheus-stack
+  - kube-prometheus-stack
   #- cluster-autoscaler
