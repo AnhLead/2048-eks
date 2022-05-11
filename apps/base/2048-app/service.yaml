@@ -3,8 +3,6 @@ kind: Service
 metadata:
   name: app-2048
   namespace: app-2048
-  annotations:
-    external-dns.alpha.kubernetes.io/hostname: 2048.anhtran.be
 spec:
   type: ClusterIP
   ports:
