@@ -20,10 +20,6 @@ values:
     clusterName: dev-cluster
   cloudProvider: aws
   awsRegion: eu-west-2
-  autoscalingGroups: [0]
-    - name: dev-cluster-asg
-      maxSize: 3
-      minSize: 1 
   rbac:
     create: true
     serviceAccount:
