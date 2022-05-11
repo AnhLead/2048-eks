@@ -1,7 +1,8 @@
-apiVersion: networking.k8s.io/v1
+---
+apiVersion: networking.k8s.io/v1beta1
 kind: Ingress
 metadata:
-  name: app-2048-ingress
+  name: ingress-fanout
   annotations:
     nginx.ingress.kubernetes.io/ssl-redirect: 'true'
     cert-manager.io/cluster-issuer: selfsigned-cluster-issuer
@@ -14,7 +15,7 @@ spec:
           - path: /usr/share/nginx/html
             backend:
               serviceName: app-2048-service
-              servicePort: '80'
+              servicePort: 80
   tls:
     - hosts:
         - app.anhtran.be
