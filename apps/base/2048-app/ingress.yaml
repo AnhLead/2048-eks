@@ -1,11 +1,14 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: app-2048-ingress
-  namespace: app-2048
   annotations:
+    nginx.ingress.kubernetes.io/proxy-body-size: "0"
+    nginx.ingress.kubernetes.io/proxy-read-timeout: "600"
+    nginx.ingress.kubernetes.io/proxy-send-timeout: "600"
     certmanager.k8s.io/cluster-issuer: selfsigned-cluster-issuer
     external-dns.alpha.kubernetes.io/hostname: 2048.anhtran.be
+  name: app-2048
+  namespace: app-2048
 spec:
   ingressClassName: nginx
   rules:
