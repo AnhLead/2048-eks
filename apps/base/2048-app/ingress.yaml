@@ -14,7 +14,7 @@ spec:
           - path: /usr/share/nginx/html
             backend:
               serviceName: app-2048-service
-              servicePort: 80
+              servicePort: '80'
   tls:
     - hosts:
         - app.anhtran.be
