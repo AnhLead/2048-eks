@@ -18,5 +18,6 @@ spec:
       - image: docker.io/alexwhen/docker-2048:latest
         name: app-2048
         ports:
-        - containerPort: 80
+        - name: http
+         containerPort: 80
             
