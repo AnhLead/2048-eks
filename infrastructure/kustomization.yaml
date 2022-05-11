@@ -6,4 +6,4 @@ resources:
   - nginx
   - cert-manager
   - metrics-server
-  - cluster-autoscaler
+  #- cluster-autoscaler
