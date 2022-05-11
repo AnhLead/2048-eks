@@ -20,7 +20,7 @@ spec:
     controller:
       service:
         annotations:
-          external-dns.alpha.kubernetes.io/hostname: anhtran.be
+          external-dns.alpha.kubernetes.io/hostname: nginx.anhtran.be
 
 
       

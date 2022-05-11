@@ -4,9 +4,10 @@ metadata:
   name: app-2048-ingress
   namespace: app-2048
   annotations:
-    kubernetes.io/tls-acme: "true"
     certmanager.k8s.io/cluster-issuer: selfsigned-cluster-issuer
-    kubernetes.io/ingress.class: ingress-nginx
+    external-dns.alpha.kubernetes.io/hostname: 2048.anhtran.be
+    alb.ingress.kubernetes.io/scheme: internet-facing
+    kubernetes.io/ingress.class: alb
 spec:
   rules:
   - host: 2048.anhtran.be
@@ -18,4 +19,4 @@ spec:
           service:
             name: app-2048-service
             port:
-              name: http
+              number: 80
