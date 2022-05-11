@@ -2,22 +2,25 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: app-2048
-  namespace: app-2048
+  labels:
+    app: app-2048
+    version: v0.0.1
 spec:
   replicas: 1
   selector:
     matchLabels:
       app: app-2048
+      version: v0.0.1
   template:
     metadata:
       labels:
         app: app-2048
+        version: v0.0.1
     spec:
+      serviceAccountName: app-2048-sa
       containers:
-      - image: docker.io/evilroot/docker-2048:latest
+      - name: app-2048
+        image: docker.io/evilroot/docker-2048:latest
         imagePullPolicy: IfNotPresent
-        name: app-2048
         ports:
-        - containerPort: 80
-
-            
+        - containerPort: 9080
