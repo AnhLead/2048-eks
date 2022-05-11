@@ -1,21 +1,23 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: app-2048
   annotations:
     kubernetes.io/ingress.class: nginx
     certmanager.k8s.io/cluster-issuer: selfsigned-cluster-issuer
     external-dns.alpha.kubernetes.io/hostname: app.anhtran.be
+  name: app-2048
+  namespace: app-2048
 spec:
-  ingressClassName: nginx
+  ingressClassName: app-2048
   rules:
   - host: app.anh.tran.be
     http:
       paths:
       - path: /
+        pathType: Prefix
         backend:
           service:
             name: app-2048
             port:
               number: 80
-        pathType: Prefix
+                
