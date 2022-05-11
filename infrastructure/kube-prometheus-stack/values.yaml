@@ -676,7 +676,6 @@ grafana:
 
   ingress:
     ## If true, Grafana Ingress will be created
-    ##
     enabled: true
 
     ## IngressClassName for Grafana Ingress.
@@ -687,7 +686,7 @@ grafana:
     ## Annotations for Grafana Ingress
     ##
     annotations:
-      kubernetes.io/tls-acme: 'true'
+      kubernetes.io/tls-acme: "true"
       cert-manager.io/cluster-issuer: letsencrypt
       cert-manager.io/duration: 2160h # 90d
       cert-manager.io/renew-before: 360h # 15d
