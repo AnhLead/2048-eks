@@ -12,7 +12,7 @@ spec:
   ingressClassName: nginx
   defaultBackend:
     service:
-      name: app-2048-backend
+      name: app-2048-service
       port:
         number: 80
   rules:
