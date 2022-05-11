@@ -12,7 +12,7 @@ spec:
         kind: HelmRepository
         name: prometheus-community
       interval: 1m
-      valuesFile: "values.yaml"
+      valuesFile: "values-default.yaml"
   install:
     crds: Create
   upgrade:
