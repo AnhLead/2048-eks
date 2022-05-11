@@ -14,10 +14,14 @@ spec:
       labels:
         app: app-2048
     spec:
-      serviceAccountName: app-2048-sa
       containers:
-      - name: app-2048
-        image: docker.io/evilroot/docker-2048:latest
-        imagePullPolicy: IfNotPresent
+      - image: docker.io/evilroot/docker-2048:latest
+        name: app-2048
         ports:
-        - containerPort: 9080
+        - name: http
+          containerPort: 80
+        livenessProbe:
+          httpGet:
+            path: /
+            port: http
+            
