@@ -26,3 +26,10 @@ values:
       create: true
       automountServiceAccountToken: true
   replicaCount: 1
+  resources: 
+    limits:
+      cpu: 100m
+      memory: 500Mi
+    requests:
+      cpu: 100m
+      memory: 500Mi
