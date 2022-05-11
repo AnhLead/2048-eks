@@ -8,7 +8,6 @@ metadata:
   name: app-2048
   namespace: app-2048
 spec:
-  ingressClassName: app-2048
   rules:
   - host: app.anh.tran.be
     http:
