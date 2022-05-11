@@ -16,11 +16,16 @@ spec:
       containers:
       - image: docker.io/evilroot/docker-2048:latest
         name: app-2048
+        env:
+        - name: APP_HTTP_ADDR
+          value: ":80"
+        - name: APP_STORAGE_FILESYSTEM_ROOTDIRECTORY
+          value: "/var/lib/nginx/html"
         ports:
         - name: http
           containerPort: 80
         volumeMounts:
         - name: app-2048
-          mouthPath: "/var/lib/nginx/html"
+          mountPath: "/var/lib/nginx/html"
 
             
