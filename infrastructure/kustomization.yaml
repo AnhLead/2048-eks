@@ -6,4 +6,5 @@ resources:
   - nginx
   - cert-manager
   - metrics-server
+  - prometheus
   #- cluster-autoscaler
