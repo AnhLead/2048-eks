@@ -5,11 +5,11 @@ metadata:
   namespace: app-2048
 spec:
   selector:
-    app: app-2048
+    name: app-2048
   type: ClusterIP
   ports:
     - name: http
-      port: 8181
+      port: 80
       targetPort: http
       protocol: TCP
 
