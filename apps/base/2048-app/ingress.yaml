@@ -11,7 +11,7 @@ spec:
   - host: anhtran.be
     http:
       paths:
-      - path: /
+      - path: /usr/share/nginx/html
         pathType: Prefix
         backend:
           service:
