@@ -15,8 +15,8 @@ spec:
         app: app-2048
     spec:
       containers:
-      - image: docker.io/rorymcleanaderas/docker-2048:latest
+      - image: docker.io/alexwhen/docker-2048:latest
         name: app-2048
         ports:
-        - containerPort: 80
+        - containerPort: 8080
             

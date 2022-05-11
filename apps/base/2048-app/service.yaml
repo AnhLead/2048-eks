@@ -6,5 +6,5 @@ spec:
   selector:
     name: app-2048
   ports:
-    - port: 80
+    - port: 8080
       targetPort: 80
