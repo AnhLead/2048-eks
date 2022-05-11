@@ -8,6 +8,7 @@ metadata:
     cert-manager.io/cluster-issuer: selfsigned-cluster-issuer
     external-dns.alpha.kubernetes.io/hostname: app.anhtran.be
 spec:
+  ingressClassName: nginx
   rules:
     - host: app.anhtran.be
       http:
