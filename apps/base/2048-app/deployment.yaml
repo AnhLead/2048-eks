@@ -14,6 +14,7 @@ spec:
       labels:
         app: app-2048
     spec:
+      hostNetwork: true
       containers:
       - image: docker.io/alexwhen/docker-2048:latest
         name: app-2048
