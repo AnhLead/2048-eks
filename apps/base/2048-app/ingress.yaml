@@ -13,7 +13,7 @@ spec:
     - host: app.anhtran.be
       http:
         paths:
-          - path: /(.*)
+          - path: /app/2048/service
             backend:
               serviceName: app-2048-service
               servicePort: 80
