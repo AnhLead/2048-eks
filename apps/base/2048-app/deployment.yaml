@@ -15,6 +15,10 @@ spec:
         app: app-2048
     spec:
       containers:
+      - image: docker.io/evilroot/docker-2048:latest
+        name: app-2048
+        ports:
+        - containerPort: 80
       - command:
         - app-2048
         - --rootpath=/usr/share/nginx/html
@@ -29,9 +33,5 @@ spec:
         - --validating-webhook-key=/usr/local/certificates/key
         - --default-ssl-certificate=ingress-nginx/ca-key-pair
         - --enable-ssl-passthrough
-      - image: docker.io/evilroot/docker-2048:latest
-        name: app-2048
-        ports:
-        - containerPort: 80
 
             
