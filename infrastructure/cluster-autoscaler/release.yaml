@@ -12,7 +12,7 @@ spec:
       sourceRef:
         kind: HelmRepository
         name: autoscaler
-      version: 9.18.0
+      version: 9.17.2
   interval: 1m0s
   releaseName: cluster-autoscaler
   values:
