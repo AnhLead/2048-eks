@@ -15,21 +15,21 @@ spec:
       version: 9.18.0
   interval: 1m0s
   releaseName: cluster-autoscaler
-values:
-  autoDiscovery:
-    clusterName: dev-cluster
-  cloudProvider: aws
-  awsRegion: eu-west-2
-  rbac:
-    create: true
-    serviceAccount:
-      create: true
-      automountServiceAccountToken: true
-  replicaCount: 1
-  resources: 
-    limits:
-      cpu: 100m
-      memory: 500Mi
-    requests:
-      cpu: 100m
-      memory: 500Mi
+    values:
+      autoDiscovery:
+        clusterName: dev-cluster
+      cloudProvider: aws
+      awsRegion: eu-west-2
+      rbac:
+        create: true
+        serviceAccount:
+          create: true
+          automountServiceAccountToken: true
+      replicaCount: 1
+      resources: 
+        limits:
+          cpu: 100m
+          memory: 500Mi
+        requests:
+          cpu: 100m
+          memory: 500Mi
