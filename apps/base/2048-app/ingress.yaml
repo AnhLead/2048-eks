@@ -14,7 +14,7 @@ spec:
     - host: app-2048-service 
       http:
         paths:
-        - path: /
+        - path: /var/lib/nginx/html
           pathType: Prefix
           backend:
             service:
