@@ -10,6 +10,11 @@ metadata:
     external-dns.alpha.kubernetes.io/hostname: app.anhtran.be
 spec:
   ingressClassName: nginx
+  defaultBackend:
+    service:
+      name: app-2048-backend
+      port:
+        number: 80
   rules:
     - host: app.anhtran.be
       http:
