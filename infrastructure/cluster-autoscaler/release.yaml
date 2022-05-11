@@ -16,11 +16,9 @@ spec:
   interval: 1m0s
   releaseName: cluster-autoscaler
   values:
-    autoDiscovery:
-      clusterName: dev-cluster
     cloudProvider: aws
     awsRegion: eu-west-2
-    autoscalingGroups: [0]
+    autoscalingGroups:
       - name: dev-cluster-asg
         maxSize: 3
         minSize: 1 
