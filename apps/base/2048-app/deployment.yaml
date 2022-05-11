@@ -21,16 +21,4 @@ spec:
         - containerPort: 80
       - command:
         - --rootpath=/usr/share/nginx/html
-      - args:
-        - /nginx-ingress-controller
-        - --publish-service=ingress-nginx/ingress-nginx-controller
-        - --election-id=ingress-controller-leader
-        - --controller-class=k8s.io/ingress-nginx
-        - --configmap=ingress-nginx/ingress-nginx-controller
-        - --validating-webhook=:8443
-        - --validating-webhook-certificate=/usr/local/certificates/cert
-        - --validating-webhook-key=/usr/local/certificates/key
-        - --default-ssl-certificate=ingress-nginx/ca-key-pair
-        - --enable-ssl-passthrough
-
             
