@@ -16,12 +16,10 @@ spec:
     spec:
       containers:
       - image: docker.io/evilroot/docker-2048:latest
+        args:
+        - /var/lib/nginx/html 
         name: app-2048
         ports:
-        - name: http
-          containerPort: 80
-        livenessProbe:
-          httpGet:
-            path: /
-            port: http
+        - containerPort: 80
+
             

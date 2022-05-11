@@ -6,7 +6,5 @@ spec:
   selector:
     name: app-2048
   ports:
-    - name: http
-      port: 80
-      targetPort: http
-  type: ClusterIP
+    - port: 80
+      targetPort: 80
