@@ -16,4 +16,4 @@ spec:
     crds: Create
   upgrade:
     crds: CreateReplace
-  valuesFile: "values.yaml"
+valuesFile: values.yaml
