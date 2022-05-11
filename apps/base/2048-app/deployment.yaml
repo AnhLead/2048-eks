@@ -4,18 +4,15 @@ metadata:
   name: app-2048
   labels:
     app: app-2048
-    version: v0.0.1
 spec:
   replicas: 1
   selector:
     matchLabels:
       app: app-2048
-      version: v0.0.1
   template:
     metadata:
       labels:
         app: app-2048
-        version: v0.0.1
     spec:
       serviceAccountName: app-2048-sa
       containers:
