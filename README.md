@@ -15,3 +15,13 @@ flux bootstrap github \
   --branch=main \
   --path=./clusters/dev-cluster \
   --private
+
+5. cert-manager
+  TODO: implement certs
+
+  Current: Manually hash out in kustomize issuer, apply once cert-manager is deployed
+
+6. Ingress nginx conflict with SG 
+    remove - tag for cluster and node. 
+    keep SG created by ingress 
+    TODO: fix this conflict
