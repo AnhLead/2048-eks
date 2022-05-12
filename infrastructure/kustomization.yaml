@@ -6,5 +6,5 @@ resources:
   - external-dns
   - nginx
   # - metrics-server - overlap with kube prometheus stack
-  #- kube-prometheus-stack
+  - kube-prometheus-stack
   #- cluster-autoscaler - overlap with tf autoscaler
