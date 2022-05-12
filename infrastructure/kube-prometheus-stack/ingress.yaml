@@ -1,0 +1,27 @@
+---
+apiVersion: networking.k8s.io/v1beta1
+kind: Ingress
+metadata:
+  name: kube-prometheus-stack-gragana-ingress
+  namespace: monitoring
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /
+    cert-manager.io/cluster-issuer: letsencrypt-cluster
+    cert-manager.io/duration: 2160h # 90d
+    cert-manager.io/renew-before: 360h # 15d
+    external-dns.alpha.kubernetes.io/hostname: grafana.anhtran.be
+spec:
+  ingressClassName: nginx
+  tls:
+  - hosts:
+    - grafana.anhtran.be
+    secretName: grafana-anhtran-be
+  rules:
+    - host: grafana.anhtran.be
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              serviceName: kube-prometheus-stack-gragana
+              servicePort: 80

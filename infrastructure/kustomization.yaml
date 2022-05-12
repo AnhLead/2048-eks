@@ -5,6 +5,6 @@ resources:
   #- cert-manager
   - external-dns
   - nginx
-  # - metrics-server - overlap with kube prometheus stack
+  - metrics-server
   - kube-prometheus-stack
   #- cluster-autoscaler - overlap with tf autoscaler
