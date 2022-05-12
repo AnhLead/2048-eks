@@ -1,5 +1,11 @@
 # 2048-eks
 
+Issue:
+cert-manager HelmRelease Bug 
+  - Workaround cert-manager.yaml direct from author jetstack 
+Ingress-controller Helmrelease applying tag to SC
+  - Workaround remove tag from SC which it created.
+
 Installation: 
 
 1. Run Terraform Apply -target module.VPC
