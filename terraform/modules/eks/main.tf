@@ -1,19 +1,19 @@
 module "eks" {
-  source = "terraform-aws-modules/eks/aws"
+  source  = "terraform-aws-modules/eks/aws"
   version = "v18.20.5"
 
-  cluster_version = var.cluster_version
+  cluster_version                 = var.cluster_version
   cluster_name                    = var.cluster_name
   cluster_endpoint_private_access = var.cluster_endpoint_private_access
   cluster_endpoint_public_access  = var.cluster_endpoint_public_access
-  manage_aws_auth_configmap = var.manage_aws_auth_configmap
+  manage_aws_auth_configmap       = var.manage_aws_auth_configmap
 
    cluster_addons = {
      coredns = {
        resolve_conflicts = "OVERWRITE"
      }
      kube-proxy = {}
-     vpc-cni = {
+     vpc-cni    = {
        resolve_conflicts = "OVERWRITE"
      }
    }
@@ -63,12 +63,12 @@ module "eks" {
     ami_type       = "AL2_x86_64"
     instance_types = var.instance_types
 
-    attach_cluster_primary_security_group = false
-#    vpc_security_group_ids                = [aws_security_group.additional.id]
+      attach_cluster_primary_security_group = false
+      vpc_security_group_ids                = [aws_security_group.additional.id]
   }
   
   eks_managed_node_groups = {
-    blue = {}
+    blue  = {}
     green = {
       min_size     = 1
       max_size     = 3
@@ -76,7 +76,7 @@ module "eks" {
 
       instance_types = var.instance_types
       capacity_type  = "SPOT"
-      labels = {
+      labels         = {
         Environment = var.environment
       }
 
@@ -96,18 +96,18 @@ module "eks" {
   tags = var.tags
 }
 
-# resource "aws_security_group" "additional" {
-#   name_prefix = "${var.cluster_name}-additional"
-#   vpc_id      = var.vpc_id
-#
-#   ingress {
-#     from_port = 22
-#     to_port   = 22
-#     protocol  = "tcp"
-#     cidr_blocks = [
-#       "10.0.0.0/8",
-#       "172.16.0.0/12",
-#       "192.168.0.0/16",
-#     ]
-#   }
-# }
+ resource "aws_security_group" "additional" {
+   name_prefix = "${var.cluster_name}-additional"
+   vpc_id      = var.vpc_id
+
+   ingress {
+     from_port   = 22
+     to_port     = 22
+     protocol    = "tcp"
+     cidr_blocks = [
+       "10.0.0.0/8",
+       "172.16.0.0/12",
+       "192.168.0.0/16",
+     ]
+   }
+ }
