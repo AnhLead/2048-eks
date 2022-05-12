@@ -64,7 +64,7 @@ module "eks" {
     instance_types = var.instance_types
 
     attach_cluster_primary_security_group = false
-    vpc_security_group_ids                = [aws_security_group.additional.id]
+#    vpc_security_group_ids                = [aws_security_group.additional.id]
   }
   
   eks_managed_node_groups = {
@@ -96,18 +96,18 @@ module "eks" {
   tags = var.tags
 }
 
-resource "aws_security_group" "additional" {
-   name_prefix = "${var.cluster_name}-additional"
-   vpc_id      = var.vpc_id
-
-   ingress {
-     from_port = 22
-     to_port   = 22
-     protocol  = "tcp"
-     cidr_blocks = [
-       "10.0.0.0/8",
-       "172.16.0.0/12",
-       "192.168.0.0/16",
-     ]
-   }
- }
+# resource "aws_security_group" "additional" {
+#   name_prefix = "${var.cluster_name}-additional"
+#   vpc_id      = var.vpc_id
+#
+#   ingress {
+#     from_port = 22
+#     to_port   = 22
+#     protocol  = "tcp"
+#     cidr_blocks = [
+#       "10.0.0.0/8",
+#       "172.16.0.0/12",
+#       "192.168.0.0/16",
+#     ]
+#   }
+# }

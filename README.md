@@ -8,6 +8,8 @@ Installation:
 
 3. kubectl config
   aws eks update-kubeconfig --region region-code --name cluster-name
+
+  aws eks update-kubeconfig --region eu-west-2 --name dev-cluster
 4. flux bootstrap
 flux bootstrap github \
   --owner=anhlead \
