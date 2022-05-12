@@ -8,6 +8,16 @@ module "eks" {
   cluster_endpoint_public_access  = var.cluster_endpoint_public_access
   manage_aws_auth_configmap = var.manage_aws_auth_configmap
 
+  cluster_addons = {
+    coredns = {
+      resolve_conflicts = "OVERWRITE"
+    }
+    kube-proxy = {}
+    vpc-cni = {
+      resolve_conflicts = "OVERWRITE"
+    }
+  }
+
   cluster_tags = {
     Name = var.cluster_name
   }
@@ -51,7 +61,7 @@ module "eks" {
   # EKS Managed Node Group(s)
   eks_managed_node_group_defaults = {
     ami_type       = "AL2_x86_64"
-    instance_types = ["t3.large", "t3.medium", "t3.small", "t3.micro"]
+    instance_types = var.instance_types
 
     attach_cluster_primary_security_group = true
     vpc_security_group_ids                = [aws_security_group.additional.id]
@@ -81,10 +91,9 @@ module "eks" {
       update_config = {
         max_unavailable_percentage = var.max_unavailable_percentage
       }
-
-      
     }
   }
+  tags = var.tags
 }
 
 resource "aws_security_group" "additional" {
@@ -101,6 +110,4 @@ resource "aws_security_group" "additional" {
       "192.168.0.0/16",
     ]
   }
-
-  
 }

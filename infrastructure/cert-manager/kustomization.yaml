@@ -5,4 +5,9 @@ resources:
   - namespace.yaml
   - release.yaml
   - repository.yaml
-  - issuer.yaml
+spec:
+  dependsOn:
+    - name: cert-manager
+  interval: 5m
+  path: "issuer.yaml"
+  prune: true
