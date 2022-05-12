@@ -17,10 +17,6 @@ spec:
   interval: 1m0s
   releaseName: external-dns
   values:
-    serviceAccount:
-      create: true
-    rbac:
-      create: true
     service:
       port: 7979
     sources:
