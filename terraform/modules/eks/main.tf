@@ -8,15 +8,15 @@ module "eks" {
   cluster_endpoint_public_access  = var.cluster_endpoint_public_access
   manage_aws_auth_configmap = var.manage_aws_auth_configmap
 
-#   cluster_addons = {
-#     coredns = {
-#       resolve_conflicts = "OVERWRITE"
-#     }
-#     kube-proxy = {}
-#     vpc-cni = {
-#       resolve_conflicts = "OVERWRITE"
-#     }
-#   }
+   cluster_addons = {
+     coredns = {
+       resolve_conflicts = "OVERWRITE"
+     }
+     kube-proxy = {}
+     vpc-cni = {
+       resolve_conflicts = "OVERWRITE"
+     }
+   }
 
   cluster_tags = {
     Name = var.cluster_name
