@@ -21,7 +21,7 @@ spec:
     controller:
       service:
         annotations:
-          external-dns.alpha.kubernetes.io/hostname: nginx.anhtran.be
+          external-dns.alpha.kubernetes.io/hostname: nginx.anhtran.be #testing external-dns
     metrics:
       port: 10254
       # if this port is changed, change healthz-port: in extraArgs: accordingly
