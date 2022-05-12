@@ -688,11 +688,10 @@ grafana:
     ##
     annotations:
       kubernetes.io/tls-acme: "true"
-      cert-manager.io/cluster-issuer: letsencrypt
+      cert-manager.io/cluster-issuer: letsencrypt-cluster
       cert-manager.io/duration: 2160h # 90d
       cert-manager.io/renew-before: 360h # 15d
       external-dns.alpha.kubernetes.io/hostname: grafana.anhtran.be
-      kubernetes.io/ingress.class: nginx
       # kubernetes.io/tls-acme: "true"
 
     ## Labels to be added to the Ingress
