@@ -5,16 +5,9 @@ metadata:
   name: app-2048-ingress
   annotations:
     nginx.ingress.kubernetes.io/rewrite-target: /
-    cert-manager.io/cluster-issuer: letsencrypt
-    cert-manager.io/duration: 2160h # 90d
-    cert-manager.io/renew-before: 360h # 15d
     external-dns.alpha.kubernetes.io/hostname: app.anhtran.be
 spec:
   ingressClassName: nginx
-  tls:
-  - hosts:
-    - app.anhtran.be
-    secretName: issuer-sec
   rules:
     - host: app.anhtran.be
       http:
